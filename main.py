@@ -41,7 +41,23 @@ pantalla = pygame.display.set_mode((ancho_pantalla, alto_pantalla), pygame.FULLS
 pygame.display.set_caption("Turnero")
 
 ordenes_listas = []
-ordenes_preparando = []
+ordenes_preparando = [
+    {
+        "id":1,
+        "texto":"K01",
+        "cliente":"Luis"
+    },
+    {
+        "id":2,
+        "texto":"K02",
+        "cliente":"Juan"
+    },
+    {
+        "id":3,
+        "texto":"K03",
+        "cliente":"Vinicio"
+    }
+]
 ordenes_anunciando = []
 qr=""
 
@@ -50,7 +66,7 @@ anunciando = False
 
 def get_orders():
     global ordenes_preparando, ordenes_listas
-    ordenes_preparando = []
+    #ordenes_preparando = []
     pass
 
 def update_order():
