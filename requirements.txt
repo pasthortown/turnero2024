@@ -1,0 +1,4 @@
+gtts==2.2.1
+pygame==2.2.2
+python-dotenv==1.0.1
+pynput=1.7.7
