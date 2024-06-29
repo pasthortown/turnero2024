@@ -1,6 +1,41 @@
-./__pycache__
+# Ignorar directorios comunes de compilación y caché
+./__pycache__/*
 ./bin
 ./include
 ./lib
 ./lib64
+
+# Ignorar archivos de configuración específicos
 pyvenv.cfg
+
+# Ignorar archivos de registro (puedes agregar más patrones según sea necesario)
+*.log
+
+# Ignorar archivos temporales (puedes agregar más patrones según sea necesario)
+*tmp/*
+
+# Ignorar archivos de salida (puedes agregar más patrones según sea necesario)
+*out/*
+
+# Ignorar directorios de prueba (puedes agregar más patrones según sea necesario)
+tests/*
+
+# Ignorar IDE y archivos de configuración específicos
+# Ajusta según tu IDE y configuración
+.idea/*
+.vscode/*
+
+# Ignorar archivos Mac específicos
+.DS_Store
+
+# Ignorar archivos de Vim (puedes agregar más patrones según sea necesario)
+*.swp
+*.vim
+
+# Ignorar archivos de Emacs (puedes agregar más patrones según sea necesario)
+*~
+#*
+
+# Ignorar archivos Git (no es necesario, pero puede ser útil)
+.git/
+.gitignore
