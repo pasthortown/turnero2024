@@ -9,8 +9,6 @@ import os
 from pynput import keyboard
 import requests
 from datetime import datetime, timedelta
-import threading
-import time
 
 load_dotenv()
 
@@ -87,6 +85,7 @@ def clean_orders(income_orders):
         exist_in_income = any(order['id'] == income_order['id'] and income_order['status'] == 'Preparando' for income_order in income_orders)
         if not exist_in_income:
             to_remove_preparando = order
+            ordenes_anunciando.append(order)
     
     for order in ordenes_listas:
         exist_in_income = any(order['id'] == income_order['id'] and income_order['status'] == 'Listo' for income_order in income_orders)
@@ -174,6 +173,7 @@ def on_release(key):
     if key == keyboard.Key.enter:
         validate_order_id(qr)
         qr = ""
+        pygame.time.delay(1000)
 
 def anunciar_orden(orden):
     numeros = int("".join([c for c in orden['texto'] if c.isdigit()]))
@@ -192,8 +192,9 @@ while running:
     if count == 1:
         tts.say("Turnero preparado, comencemos")
         pygame.time.delay(2000)
-
+        
     count = count + 1
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
